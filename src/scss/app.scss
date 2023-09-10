@@ -1,0 +1,13 @@
+@import './variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  box-sizing: content-box;
+}
+
+a {
+	color: $a-color;
+}

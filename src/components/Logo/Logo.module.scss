@@ -1,0 +1,80 @@
+.wrapper {
+  display: flex;
+  padding: 10px;
+	flex-direction: row;
+
+  &:hover .svgStar {
+    transition: .4s;
+    fill: #e13761;
+  }
+
+  svg {	
+    padding: 0 5px;
+    filter: drop-shadow(-4px 6px 3px rgba(34, 60, 80, 0.2));
+    overflow: visible;
+    box-sizing: border-box;
+  }
+}
+
+.svgStar {
+  width: 90px;
+  fill: #e4e3de;
+  transition: .4s;
+
+  .stroke {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+  
+  .stroke, .fill {	
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+    
+    animation: logo-angling 4s linear alternate infinite;
+  }
+
+  .text {    
+    fill: #000;
+    font-family: MyriadPro-Regular, 'Myriad Pro';
+    font-size: 33.61px;
+  }
+}
+
+.svgText {
+
+  width: 337px;
+  .text {
+    fill: #e4e3de;
+    font-family: Rockwell-ExtraBold, 'Rockwell Extra Bold';
+    font-size: 95.35px;
+    font-weight: 700;
+    stroke: #000;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+  }
+  
+  .subText {
+    fill: #000;
+    font-family: PT Mono, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  
+  .textRed {
+    fill: #e13761;
+    stroke: #000;
+    text-shadow: none !important;
+  }
+}
+
+@keyframes logo-angling {
+	from {
+		transform: rotate(4deg);
+	}
+	to {
+		transform: rotate(-4deg);
+	}
+}

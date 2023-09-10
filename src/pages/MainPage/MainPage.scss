@@ -1,0 +1,148 @@
+@import '../../scss/variables';
+
+.main-page {
+  display: flex;
+  position: relative;
+	overflow: hidden;
+	
+  // height: 100%;
+	width: 100%;
+	
+	color: $font-color;
+	font-family: $font-family, $font-family-default;
+  font-size: $font-size;
+	text-shadow: -4px 2px 9px rgba(34,60,80,0.6);
+
+  @media(max-width: 1280px) {
+    flex-direction: column-reverse;
+    font-size: $font-size-mobile;
+  }  
+
+  h1, h3 {	  
+    letter-spacing: .9px;
+    line-height: 100px;
+    
+    margin-bottom: 20px;
+    width: 600px;
+  }
+  
+  h1 {
+    font-size: $font-size-h1;
+  }
+
+  h3 {
+    font-size: $font-size-h3;
+  }
+
+  &__wrapper {
+    position: relative;
+    border: 0;	
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    transition: width .7s;
+    
+    @media(max-width: 1280px) {
+      width: 100% !important;
+      max-height: revert;
+      overflow-y: scroll;
+    }
+  }
+
+  &__content {
+    @media(min-width: 1281px) {
+      width: 100%;
+    }
+
+    @media(max-width: 1280px) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.main-page_additional {
+  flex-grow: 1;
+  background-color: $background-color-first;
+  display: flex;
+  justify-content: center;
+  
+  @media(min-width: 1281px) {
+    .main-page__content {
+      width: 450px;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+      
+      padding: 40px 0;
+    }
+    
+    .main-page__infolist {
+      opacity: 0;
+      max-height: 0;
+
+      animation: .6s linear 1.5s infolist-in;
+	    animation-fill-mode: forwards;
+      
+      @keyframes infolist-in {
+        to {
+          max-height: 100vh;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  @media(max-width: 1600px) {
+    overflow-y: scroll;
+		overflow-x: hidden;
+  }
+
+  @media(max-width: 1280px) {
+    overflow: hidden;
+  }
+
+  h3 {
+    padding: 0;
+    margin-bottom: 5px;
+    line-height: revert;
+    font-size: 36px;
+  }
+}
+
+.main-page_resume {
+  width: 0%;
+  background-color: $background-color-second;    
+  
+  overflow: hidden; 
+
+  @media(min-width: 1281px) {
+    .main-page__content {
+      width: 650px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    
+    }
+  }
+
+  &.slide-left {
+    animation: .5s linear 1s slide-left;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes slide-left {
+    from {
+      width: 0%;        
+    }
+    to {
+      width: 60%;
+      -webkit-box-shadow: -10px 0px 15px 7px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: -10px 0px 15px 7px rgba(34, 60, 80, 0.2);
+      box-shadow: -10px 0px 15px 7px rgba(34, 60, 80, 0.2);
+    }
+  }
+}

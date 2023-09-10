@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+
+
+
+
+.main-block__logo-center {	
+	top: 27%;
+	transform: translate(-50%, -27%);
+	width: 450px;
+	animation: .5s linear 1s logo-slidedown;
+	animation-fill-mode: forwards;
+}
+
+@keyframes logo-slidedown {	
+	to {
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+
+
+@media(max-width: 1600px) {
+	.main-block__logo {
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	
+	.main-block__logo-center {
+		height: 100%;
+	}
+}
+
+@media(max-width: 1280px) {
+	
+	
+	.main-block__logo, .main-block__info {
+		width: 100%;
+	}
+}
+
