@@ -8,6 +8,16 @@
   box-sizing: content-box;
 }
 
+body {
+  background-color: #f6f5f3;
+}
+
 a {
 	color: $a-color;
+}
+
+.page-root {
+  background-color: $background-color-first;
+  max-width: 1440px;
+  margin: 0 auto;
 }
