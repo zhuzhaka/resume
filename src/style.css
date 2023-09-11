@@ -21,22 +21,7 @@
 
 
 
-@media(max-width: 1600px) {
-	.main-block__logo {
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
-	
-	.main-block__logo-center {
-		height: 100%;
-	}
-}
 
-@media(max-width: 1280px) {
-	
-	
-	.main-block__logo, .main-block__info {
-		width: 100%;
-	}
-}
+
+
 

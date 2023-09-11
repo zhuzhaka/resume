@@ -16,24 +16,25 @@ export const MainPage = () => {
 	
   return (
     <main className="main-page">
+			<LanguageSwitch />
+			<div className="main-page__wrapper main-page_resume slide-left">
+				<div className="main-page__content">		
+					<ResumeBlock resumeData={resumeData}/>
+				</div>
+			</div>
 			<div className="main-page__wrapper main-page_additional">		
 				<div className="main-page__content">
 					<div className="main-page__logo">
 						<h3>Provided by</h3>
 						<Logo />
 					</div>
-					<div className='main-page__infolist'>
+					{/* <div className='main-page__infolist'>
 						<InfoList list={authorStackData.list} title={authorStackData.title}/>
 						<InfoList list={hrOptionsData.list} title={hrOptionsData.title}/>		
-					</div>
+					</div> */}
 				</div>
 			</div>
-			<div className="main-page__wrapper main-page_resume slide-left">
-				<LanguageSwitch />
-				<div className="main-page__content">		
-					<ResumeBlock resumeData={resumeData}/>
-				</div>
-			</div>
+			
     </main>
   );
 }

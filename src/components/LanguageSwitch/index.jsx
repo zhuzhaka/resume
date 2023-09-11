@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import styles from "./LangSwitch.module.scss"
+import "./LanguageSwitch.scss"
 import { LanguageContext } from '../../context'
 import { AvailableLanguages } from '../../helpers/consts';
 
@@ -12,13 +12,13 @@ export const LanguageSwitch = () => {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className="language-switch">
 			<button
-        className={`${styles.button}${localization.language !== AvailableLanguages.ru.code ? '' : ' ' + styles.buttonDisabled}`}
+        className={`language-switch__button ${localization.language !== AvailableLanguages.ru.code ? '' : ' language-switch__button_disabled'}`}
         onClick={onButtonClick}
       >{AvailableLanguages.en.text}</button>
 			<button
-        className={`${styles.button}${localization.language === AvailableLanguages.ru.code ? '' : ' ' + styles.buttonDisabled}`}
+        className={`language-switch__button ${localization.language === AvailableLanguages.ru.code ? '' : ' language-switch__button_disabled'}`}
         onClick={onButtonClick}
       >{AvailableLanguages.ru.text}</button>
 		</div>

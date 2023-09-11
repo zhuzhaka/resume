@@ -13,13 +13,17 @@
     filter: drop-shadow(-4px 6px 3px rgba(34, 60, 80, 0.2));
     overflow: visible;
     box-sizing: border-box;
-  }
+  }  
 }
 
 .svgStar {
   width: 90px;
   fill: #e4e3de;
   transition: .4s;
+
+  @media(max-width: 1280px) {
+    width: 30%;
+  }
 
   .stroke {
     fill: none;
@@ -44,8 +48,12 @@
 }
 
 .svgText {
-
   width: 337px;
+
+  @media(max-width: 1280px) {
+    width: 100%;
+  }
+
   .text {
     fill: #e4e3de;
     font-family: Rockwell-ExtraBold, 'Rockwell Extra Bold';

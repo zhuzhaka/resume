@@ -1,14 +1,14 @@
-.wrapper {
-  position: absolute;
-	top: 50px;
-	right: 50px;
-	z-index: 100;
+.language-switch {
+  // position: absolute;
+	// top: 50px;
+	// right: 50px;
+	// z-index: 100;
 	
 	-webkit-box-shadow: -10px 0px 15px 7px rgba(34, 60, 80, 0.2);
 	-moz-box-shadow: -10px 0px 15px 7px rgba(34, 60, 80, 0.2);
 	box-shadow: -10px 0px 15px 7px rgba(34, 60, 80, 0.2);
 
-  .button {
+  &__button {
     border: #f09ac2 2px solid;
     background-color: #f09ac2;
     background-color: #037b57;
@@ -24,17 +24,18 @@
     
     transition: .15s;
     padding: 5px;
-  }
-  
-  .buttonDisabled {
-    background-color: #e4e3de;
-    border-width: 1px;
-    color: #000;
-    padding: 2px;
-    opacity: .65;
 
-    &:hover {
-      color: #e4e3de;
+    &_disabled {
+      background-color: #e4e3de;
+      border-width: 1px;
+      color: #000;
+      padding: 2px;
+      opacity: .65;
+  
+      &:hover {
+        color: #e4e3de;
+      }
     }
   }
+  
 }
