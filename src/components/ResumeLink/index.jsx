@@ -4,6 +4,7 @@ export const ResumeLink = ({
   linkHref,
   linkText,
   subText,
+  subTextAlternate,
   onClick,
   options = { openInNewWindow: true, }
 }) => {
@@ -12,8 +13,9 @@ export const ResumeLink = ({
   const handleOnClick = () => {
     if (typeof onClick === 'function') {
       onClick();
-      setIsClicked(true);
     }
+
+    setIsClicked(true);
   }
   return (
     <>
@@ -24,7 +26,7 @@ export const ResumeLink = ({
           : <a href={linkHref} rel="noreferrer">{linkText}</a>
         }
       </div>
-		  <span className={isClicked && "resume-link_text-animation"}>{subText}</span>    
+		  <span className={isClicked ? "resume-link_text-animation" : ''}>{!isClicked ? subText : subTextAlternate}</span>    
     </>
   );
 }

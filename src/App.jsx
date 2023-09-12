@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LanguageContext } from "./context";
+import { LocalizationContext } from "./context";
 import { useLocalization } from "./helpers/useLocalization";
 import { MainPage } from "./pages/MainPage";
 
@@ -14,9 +14,9 @@ function App() {
 	});
 
   return (
-		<LanguageContext.Provider value={{localization, setLocalization}}>
+		<LocalizationContext.Provider value={{localization, setLocalization}}>
 			<MainPage />
-		</LanguageContext.Provider>
+		</LocalizationContext.Provider>
   );
 }
 

@@ -1,10 +1,10 @@
 import { useContext } from 'react'
 import "./LanguageSwitch.scss"
-import { LanguageContext } from '../../context'
+import { LocalizationContext } from '../../context'
 import { AvailableLanguages } from '../../helpers/consts';
 
 export const LanguageSwitch = () => {
-  const { localization, setLocalization } = useContext(LanguageContext);
+  const { localization, setLocalization } = useContext(LocalizationContext);
   
   const onButtonClick = () => {
     const lang = localization.language === AvailableLanguages.ru.code ? AvailableLanguages.en.code : AvailableLanguages.ru.code;

@@ -1,11 +1,7 @@
-import { useState } from 'react';
 import { ResumeLink } from '../ResumeLink';
 import './ResumeBlock.scss'
 
 export const ResumeBlock = ({resumeData}) => {
-	const [gitSubText, setGitSubText] = useState("чужие проекты, которые автор выдает за свои");
-	const [behanceSubText, setBehanceSubText] = useState("велиКАЛепные дизайны автора");
-	const [youtubeSubText, setYoutubeSubText] = useState("а еще автор инфоцыган");
 
   return (
     <div className="resume-block">
@@ -19,41 +15,33 @@ export const ResumeBlock = ({resumeData}) => {
 						<li>
 							<ResumeLink
 								linkHref={"https://github.com/zhuzhaka"}
-								linkText={"GitHub"}
-								subText={gitSubText}
-								onClick={() => {
-									setGitSubText("Ладно, ладно! Это говнокод автора, но ему помогали!");
-								}}
+								linkText={resumeData.links.github.text}
+								subText={resumeData.links.github.sub_text}
+								subTextAlternate={resumeData.links.github.sub_text_alternate}
 							/>
 						</li>
 						<li>
 							<ResumeLink
 								linkHref={"https://www.behance.net/zhuzhaka"}
-								linkText={"Behance"}
-								subText={behanceSubText}
-								onClick={() => {
-									setBehanceSubText("Тут еще веселее чем с гитхабом");
-								}}
+								linkText={resumeData.links.behance.text}
+								subText={resumeData.links.behance.sub_text}
+								subTextAlternate={resumeData.links.behance.sub_text_alternate}
 							/>
 						</li>
 						<li>
 							<ResumeLink
 								linkHref={"mailto:zhuzhaka.dog@gmail.com"}
-								linkText={"E-Mail"}
-								subText={"ящик для предложений работы мечты"}
-								onClick={() => {
-								}}
+								linkText={resumeData.links.email.text}
+								subText={resumeData.links.email.sub_text}
 								options={{openInNewTab: false}}
 							/>
 						</li>
 						<li>
 							<ResumeLink
 								linkHref={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
-								linkText={"YouTube"}
-								subText={youtubeSubText}
-								onClick={() => {
-									setYoutubeSubText("очевидно, не стоит верить автору, everbody lies");
-								}}
+								linkText={resumeData.links.youtube.text}
+								subText={resumeData.links.youtube.sub_text}
+								subTextAlternate={resumeData.links.youtube.sub_text_alternate}
 							/>
 						</li>
 					</ul>

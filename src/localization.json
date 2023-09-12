@@ -8,6 +8,28 @@
         "realme": "✊ I am the one who knocks ",
         "fakeme": "(hah, relax, i'm just a regular frontend-developer)",
         "rofl": "🤟 I HATE <b>JavaScript</b>, <b>ReactJS</b> and <b>UI design</b>. (but it smells like money, so... i'm in 😎)"
+      },
+      "links": {
+        "github": {
+          "text": "GitHub",
+          "sub_text": "some projects that the author passes off as his own",
+          "sub_text_alternate": "Okay, okay! This is the author's shit code, but he got helped!"
+        },
+        "behance": {
+          "text": "Behance",
+          "sub_text": "the author's ridiculous designs",
+          "sub_text_alternate": "it's even more ridiculous than the author's github"
+        },
+        "email": {
+          "text": "E-mail",
+          "sub_text": "a box for dream job offers",
+          "sub_text_alternate": "a box for dream job offers"
+        },
+        "youtube": {
+          "text": "YouTube",
+          "sub_text": "the author is also an infocygan",
+          "sub_text_alternate": "honestly, everybody lies"
+        }
       }
     },
     "author_stack": {
@@ -42,6 +64,28 @@
         "realme": "✊ Я тот, кто стучит в дверь! ",
         "fakeme": "(хаха, спокойствие, я всего-лишь очередной frontend-разработчик)",
         "rofl": "🤟 Терпеть не могу <b>JavaScript</b>, <b>ReactJS</b> и <b>UI design</b>. (но деньги не пахнут, так-что... Я в деле 😎)"
+      },
+      "links": {
+        "github": {
+          "text": "GitHub",
+          "sub_text": "чужие проекты, которые автор выдает за свои",
+          "sub_text_alternate": "Ладно, ладно! Это говнокод автора, но ему помогали!"
+        },
+        "behance": {
+          "text": "Behance",
+          "sub_text": "нелепые дизайны автора",
+          "sub_text_alternate": "Тут еще веселее чем с гитхабом"
+        },
+        "email": {
+          "text": "E-mail",
+          "sub_text": "ящик для предложений работы мечты",
+          "sub_text_alternate": "ящик для предложений работы мечты"
+        },
+        "youtube": {
+          "text": "YouTube",
+          "sub_text": "а еще автор инфоцыган",
+          "sub_text_alternate": "очевидно, не стоит верить автору, everbody lies"
+        }
       }
     },
     "author_stack": {

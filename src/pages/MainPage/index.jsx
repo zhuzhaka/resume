@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { LanguageContext } from '../../context';
+import { LocalizationContext } from '../../context';
 
 import { Logo } from '../../components/Logo'
 import { InfoList } from '../../components/InfoList';
@@ -9,9 +9,9 @@ import { LanguageSwitch } from '../../components/LanguageSwitch'
 import "./MainPage.scss"
 
 export const MainPage = () => {
-	const { localization } = useContext(LanguageContext);
-	const authorStackData = localization.localizedTexts.author_stack;
-	const hrOptionsData = localization.localizedTexts.hr_options;
+	const { localization } = useContext(LocalizationContext);
+	// const authorStackData = localization.localizedTexts.author_stack;
+	// const hrOptionsData = localization.localizedTexts.hr_options;
 	const resumeData = localization.localizedTexts.resume;
 	
   return (

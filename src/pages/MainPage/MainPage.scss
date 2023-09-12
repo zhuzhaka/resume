@@ -102,8 +102,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: auto;      
-  padding: 40px 0;
+  margin: auto;
   
   @media(min-width: 1281px) {
     .main-page__content {
@@ -117,6 +116,13 @@
       animation: .6s linear 1.5s infolist-in;
 	    animation-fill-mode: forwards;
       
+      @-webkit-keyframes infolist-in {
+        to {
+          max-height: 100vh;
+          opacity: 1;
+        }
+      }
+
       @keyframes infolist-in {
         to {
           max-height: 100vh;
@@ -134,10 +140,17 @@
   }
 
   @media(max-width: 1280px) {
-    overflow: hidden;
+    overflow: hidden;      
+    padding: 40px 0;
     
     animation: 1s linear 1s additional-slide-down;
     animation-fill-mode: forwards;    
+
+    @-webkit-keyframes additional-slide-down {
+      to {
+        min-height: 25vh;
+      }
+    }
 
     @keyframes additional-slide-down {
       to {
@@ -172,6 +185,19 @@
     animation: .5s linear 1s slide-left;
     animation-fill-mode: forwards;
 
+    @-webkit-keyframes slide-left {
+      from {
+        width: 0%;        
+      }
+      to {
+        width: 60%;
+      
+        -webkit-box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
+      }
+    }
+
     @keyframes slide-left {
       from {
         width: 0%;        
@@ -199,6 +225,10 @@
     animation: 1s linear 1s slide-down;
     animation-fill-mode: forwards;
 
+    .resume-block {
+      padding-top: 50px;
+    }
+
     h1 {
       font-size: 24px;
       width: revert;
@@ -209,6 +239,15 @@
 
     p {
       font-size: 18px;
+    }
+
+    @-webkit-keyframes slide-down {
+      75% {
+        max-height: 100vh;
+      }
+      100% {
+        max-height: revert;
+      }
     }
 
     @keyframes slide-down {
