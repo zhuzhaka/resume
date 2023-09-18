@@ -1,19 +1,58 @@
-$background-color-first:          #D4B2D5;
-$background-color-second:         #46519d;
-$border-color:                      #f09ac2;
-        
-$font-color:                      #e4e3de;
-$font-family:                       'PT Mono';
-$font-family-default:               'system-ui';
-$font-size-h1:                      100px;
-$font-size-h3:                      36px;
-$font-size-p:                       29px;
-$font-size:                       29px;
+$background-color-first: #d4b2d5;
+$background-color-second: #46519d;
+$border-color: #f09ac2;
 
-$font-size-mobile:                  18px;
-      
-$a-color:                         #f09ac2;
-$button-background-color:         #037b57;
-      
-$media-desktop-min-width:           '1281px';
-$media-mobile-max-width:            '1280px';
+$primary: #d4b2d5 !default;
+$secondary: #46519d !default;
+$advantage: #037b57 !default;
+$disabled: #e4e3de !default;
+
+$font-color: #e4e3de !default;
+$fc-alternate: #f09ac2 !default;
+
+$font-family: "PT Mono";
+$font-family-default: "system-ui";
+$font-size-h1: 100px;
+$font-size-h3: 36px;
+$font-size-p: 29px;
+$font-size: 29px;
+
+$font-size-mobile: 18px;
+
+$a-color: #f09ac2;
+$button-background-color: #037b57;
+
+// min-width: 1200px                              -> large desktop
+// min-width: 992px and max-width: 1119px         -> medium desktop or tablet
+// max-width: 992px
+// min-width: 768px and max-width: 991px          -> small desktop or tablet
+// min-width: 768px
+// max-width: 767px                               -> phones and tablets
+// 480px
+// 320px
+
+$media-desktop-min-width: 1281px;
+$media-mobile-max-width: 1280px;
+
+$container-max-width: 1440px;
+
+$mobile-container-width: 90%;
+
+@mixin box-shadow {
+  -webkit-box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
+}
+
+/*
+  ******************************************
+  *** LanguageSwitch component variables ***
+  ******************************************
+*/
+
+$ls-btn-bg-primary: $advantage !default;
+$ls-btn-border-color: $primary !default;
+
+$ls-btn-disabled-bg: $disabled !default;
+$ls-btn-disabled-color: #fff;
+$ls-btn-disabled-hover-color: $fc-alternate !default;

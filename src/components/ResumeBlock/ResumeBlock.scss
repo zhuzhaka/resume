@@ -1,67 +1,69 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 
 .resume-block {
-  &__links, h1 {
-    width: auto;
-    // padding: 30px 25px 30px 25px;
-    // padding-right: 25px;
-    // padding-left: 25px; 
-  }
+  // &__links, h1 {
+  //   width: auto;
+  // }
 
   &__text {
-    width: 650px;
     p {
-      // padding: 5px 15px;
       font-family: PT Mono;
       font-size: 29px;
       letter-spacing: -1px;
       line-height: 45px;
-      // width: 650px;
-      text-shadow: -4px 2px 9px rgba(34,60,80,0.6);
-  
+      text-shadow: -4px 2px 9px rgba(34, 60, 80, 0.6);
     }
 
-    @media(max-width: 1280px) {
+    @media (min-width: $media-desktop-min-width) {
+      width: 650px;
+    }
+
+    @media (max-width: $media-mobile-max-width) {
       width: auto;
       padding: 15px 15px;
 
       p {
         padding: 15px 0;
-
       }
-      // width: calc(100% - 50px);
-      // padding: 30px 0 0 50px;
     }
   }
-  
 
   &__links {
     display: flex;
     position: relative;
     flex-direction: row;
-    overflow-x: auto;
     padding-top: 50px;
-    // padding-bottom: 50px;
 
-    @media(max-width: $media-mobile-max-width) {
+    @media (max-width: $media-mobile-max-width) {
       padding: 0 15px 30px 15px;
       flex-direction: column;
+
+      overflow-x: auto;
     }
-    
+
     span {
       font-size: 14px;
-      transition: .75s;
+      transition: 0.75s;
 
       &.resume-link_text-animation {
         opacity: 0;
-        transition: .5s;
+        transition: 0.5s;
 
-        animation: .5s linear 0s text-opacity-animation;
+        animation: 0.5s linear 0s text-opacity-animation;
         animation-fill-mode: forwards;
+
+        @-webkit-keyframes text-opacity-animation {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
 
         @keyframes text-opacity-animation {
           from {
-            opacity: 0;            
+            opacity: 0;
           }
           to {
             opacity: 1;
@@ -79,63 +81,47 @@
       position: relative;
       flex-direction: column;
       margin: 0 auto;
-      // border-left: 2px #fff solid;
-      padding: 10px 20px; 
+      padding: 10px 20px;
       width: calc(20% - 3px);
 
-      @media(min-width: $media-desktop-min-width) {
+      @mixin link-separator-line {
+        content: "";
+        position: absolute;
+        background-color: #fff;
+        width: 2px;
+        height: 50%;
+        opacity: 0.45;
+      }
+
+      @media (min-width: $media-desktop-min-width) {
         &:not(:last-child):after {
-          content: '';
-          width: 2px;
-          height: 50%;
-          background-color: #fff;
-          position: absolute;
+          @include link-separator-line;
+
           bottom: 0;
           right: 0;
-  
           transform: translate(0%, -50%);
-  
-          opacity: .45;
         }
-        
+
         &:first-child {
           padding-left: 0;
         }
-  
+
         &:last-child {
           padding-right: 0;
-  
         }
       }
 
-
-
-      @media(max-width: $media-mobile-max-width) {
-        // background-color: $button-background-color;
-        // border: $border-color 1px solid;
-        // border-radius: 100px;
-
-        // color: $font-color;
-        
-        // background-color: $button-background-color;
-        // flex-direction: row;
+      @media (max-width: $media-mobile-max-width) {
+        width: 100%;
+        padding: 20px 15px;
 
         &:before {
-          content: '';
-          width: 2px;
-          height: 50%;
-          background-color: #fff;
-          position: absolute;
+          @include link-separator-line;
+
           top: 0;
           left: 0;
-  
           transform: translate(0%, 50%);
-  
-          opacity: .45;
         }
-
-        width: 100%;
-        padding: 20px 15px;       
 
         span {
           padding: 5px 10px;
@@ -144,33 +130,17 @@
     }
 
     a {
-      margin-right: 30px;
-      
-      &:last-child {
-        margin-right: 0;
+      @media (min-width: $media-desktop-min-width) {
+        margin-right: 30px;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
 
-      @media(min-width: $media-desktop-min-width) {
-        // &::after {
-        //   // display: block;
-        //   color: $font-color;
-        //   content: " --- ";
-        // }
-
-      }
-
-      @media(max-width: $media-mobile-max-width) {
-        // background-color: $button-background-color;
-        // border: $border-color 1px solid;
-        // border-radius: 100px;
-
-        // color: $font-color;
-        // flex-direction: row;
-
+      @media (max-width: $media-mobile-max-width) {
         padding: 15px 0;
       }
     }
-
-    
   }
 }

@@ -1,32 +1,27 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 
 .main-page {
   display: flex;
   position: relative;
   flex-direction: row-reverse;
-	// overflow: hidden;
-	
-  // height: 100%;
-	width: 100%;
-	
-	color: $font-color;
-	font-family: $font-family, $font-family-default;
+  width: 100%;
+
+  color: $font-color;
+  font-family: $font-family, $font-family-default;
   font-size: $font-size;
-	text-shadow: -4px 2px 9px rgba(34,60,80,0.6);
+  text-shadow: -4px 2px 9px rgba(34, 60, 80, 0.6);
 
-  @media(min-width: $media-desktop-min-width) {
-    .language-switch {
-      position: absolute;
-      top: 50px;
-      right: 50px;
-      z-index: 100;
+  @media (min-width: $media-desktop-min-width) {
+    &__language-switch {
+      display: none;
+      position: relative;
     }
-  }  
+  }
 
-  @media(max-width: 1280px) {
+  @media (max-width: $media-mobile-max-width) {
     flex-direction: column;
-    font-size: $font-size-mobile; 
-    
+    font-size: $font-size-mobile;
+
     .language-switch {
       position: fixed;
       width: 100%;
@@ -36,7 +31,6 @@
       display: flex;
       height: 50px;
 
-      
       &__button {
         width: 50%;
         border: 1px $font-color solid;
@@ -53,16 +47,18 @@
     z-index: 100;
   }
 
-  h1, h3 {	  
-    letter-spacing: .9px;
-    line-height: 100px;
-    
+  h1,
+  h3 {
+    letter-spacing: 0.9px;
+    // line-height: 100px;
+
     margin-bottom: 20px;
-    width: 600px;
+    width: 100%;
   }
-  
+
   h1 {
-    font-size: $font-size-h1;
+    font-size: 72px;
+    word-spacing: 100vw;
   }
 
   h3 {
@@ -71,13 +67,20 @@
 
   &__wrapper {
     position: relative;
-    border: 0;	
+    border: 0;
     min-height: 100vh;
     max-height: 100vh;
     overflow: hidden;
-    transition: width .7s;
-    
-    @media(max-width: 1280px) {
+    transition: width 0.7s;
+
+    @media (min-width: $media-desktop-min-width) {
+      .main-page__language-switch {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+
+    @media (max-width: $media-mobile-max-width) {
       width: 100% !important;
       max-height: revert;
       overflow-y: scroll;
@@ -85,11 +88,11 @@
   }
 
   &__content {
-    @media(min-width: 1281px) {
+    @media (min-width: 1281px) {
       width: 100%;
     }
 
-    @media(max-width: 1280px) {
+    @media (max-width: 1280px) {
       width: 90%;
       margin: 0 auto;
     }
@@ -103,19 +106,19 @@
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  
-  @media(min-width: 1281px) {
+
+  @media (min-width: 1281px) {
     .main-page__content {
-      width: 450px;            
+      width: 450px;
     }
-    
+
     .main-page__infolist {
       opacity: 0;
       max-height: 0;
 
-      animation: .6s linear 1.5s infolist-in;
-	    animation-fill-mode: forwards;
-      
+      animation: 0.6s linear 1.5s infolist-in;
+      animation-fill-mode: forwards;
+
       @-webkit-keyframes infolist-in {
         to {
           max-height: 100vh;
@@ -139,12 +142,13 @@
     font-size: 36px;
   }
 
-  @media(max-width: 1280px) {
-    overflow: hidden;      
+  @media (max-width: 1280px) {
+    min-height: 25vh;
+    overflow: hidden;
     padding: 40px 0;
-    
-    animation: 1s linear 1s additional-slide-down;
-    animation-fill-mode: forwards;    
+
+    // animation: 1s linear 1s additional-slide-down;
+    // animation-fill-mode: forwards;
 
     @-webkit-keyframes additional-slide-down {
       to {
@@ -157,23 +161,22 @@
         min-height: 25vh;
       }
     }
-    
+
     h3 {
       font-size: 24px;
       width: revert;
       line-height: revert;
     }
   }
-
 }
 
 .main-page_resume {
-  width: 0%;
-  background-color: $background-color-second;    
-  
-  overflow: hidden; 
+  width: 60%;
+  background-color: $background-color-second;
 
-  @media(min-width: 1281px) {
+  overflow: hidden;
+
+  @media (min-width: $media-desktop-min-width) {
     .main-page__content {
       width: 650px;
       position: absolute;
@@ -181,49 +184,49 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    
-    animation: .5s linear 1s slide-left;
-    animation-fill-mode: forwards;
+
+    .resume-block {
+      height: 650px;
+      // overflow-y: scroll;
+      padding: 20px 0;
+    }
+
+    // animation: 0.5s linear 1s slide-left;
+    // animation-fill-mode: forwards;
 
     @-webkit-keyframes slide-left {
       from {
-        width: 0%;        
+        width: 0%;
       }
       to {
         width: 60%;
-      
-        -webkit-box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
-        -moz-box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
-        box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
+        @include box-shadow;
       }
     }
 
     @keyframes slide-left {
       from {
-        width: 0%;        
+        width: 0%;
       }
       to {
         width: 60%;
-      
-        -webkit-box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
-        -moz-box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
-        box-shadow: 0px 0px 15px 17px rgba(34, 60, 80, 0.2);
+        @include box-shadow;
       }
     }
-  }  
-  
-  @media(max-width: 1600px) {
-    overflow-y: scroll;
-		overflow-x: hidden;
   }
 
-  @media(max-width: $media-mobile-max-width) {
-    overflow: hidden;
-    max-height: 0;
-    min-height: 0;
+  @media (max-width: 1600px) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 
-    animation: 1s linear 1s slide-down;
-    animation-fill-mode: forwards;
+  @media (max-width: $media-mobile-max-width) {
+    overflow: hidden;
+    // max-height: 0;
+    // min-height: 0;
+
+    // animation: 1s linear 1s slide-down;
+    // animation-fill-mode: forwards;
 
     .resume-block {
       padding-top: 50px;

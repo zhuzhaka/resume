@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 
 * {
   margin: 0;
@@ -9,15 +9,14 @@
 }
 
 body {
-  background-color: $background-color-first;
-
+  background-color: $primary;
 }
 
 a {
-	color: $a-color;
+  color: $a-color;
 }
 
 .page-root {
-  max-width: 1440px;
+  max-width: $container-max-width;
   margin: 0 auto;
 }

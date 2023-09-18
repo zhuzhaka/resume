@@ -1,26 +1,43 @@
-import { useContext } from 'react'
-import "./LanguageSwitch.scss"
-import { LocalizationContext } from '../../context'
-import { AvailableLanguages } from '../../helpers/consts';
+import { useContext } from "react";
+import { LocalizationContext } from "../../context";
+import { AvailableLanguages } from "../../helpers/consts";
+
+import "./LanguageSwitch.scss";
 
 export const LanguageSwitch = () => {
   const { localization, setLocalization } = useContext(LocalizationContext);
-  
-  const onButtonClick = () => {
-    const lang = localization.language === AvailableLanguages.ru.code ? AvailableLanguages.en.code : AvailableLanguages.ru.code;
+
+  const onButtonClickHandler = () => {
+    const lang =
+      localization.language === AvailableLanguages.ru.code
+        ? AvailableLanguages.en.code
+        : AvailableLanguages.ru.code;
+
     setLocalization(lang);
-  }
+  };
 
   return (
     <div className="language-switch">
-			<button
-        className={`language-switch__button ${localization.language !== AvailableLanguages.ru.code ? '' : ' language-switch__button_disabled'}`}
-        onClick={onButtonClick}
-      >{AvailableLanguages.en.text}</button>
-			<button
-        className={`language-switch__button ${localization.language === AvailableLanguages.ru.code ? '' : ' language-switch__button_disabled'}`}
-        onClick={onButtonClick}
-      >{AvailableLanguages.ru.text}</button>
-		</div>
+      <button
+        className={`language-switch__button ${
+          localization.language !== AvailableLanguages.ru.code
+            ? ""
+            : " language-switch__button_disabled"
+        }`}
+        onClick={onButtonClickHandler}
+      >
+        {AvailableLanguages.en.text}
+      </button>
+      <button
+        className={`language-switch__button ${
+          localization.language === AvailableLanguages.ru.code
+            ? ""
+            : " language-switch__button_disabled"
+        }`}
+        onClick={onButtonClickHandler}
+      >
+        {AvailableLanguages.ru.text}
+      </button>
+    </div>
   );
-}
+};
