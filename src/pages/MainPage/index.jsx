@@ -10,6 +10,8 @@ import "./MainPage.scss";
 
 export const MainPage = () => {
   const { localization } = useContext(LocalizationContext);
+  console.log(localization);
+  console.log(localization.localizedTexts);
 
   return (
     <main className="main-page">
