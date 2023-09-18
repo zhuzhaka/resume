@@ -28,6 +28,9 @@ export const useLocalization = (
     }
   };
 
+  console.log(lastLanguage);
+  console.log(localizedTexts.resume.links.github.text);
+
   return localizedTexts
     ? [
         {
