@@ -12,7 +12,7 @@ export const MainPage = () => {
   const { localization } = useContext(LocalizationContext);
   console.log(localization);
   console.log(localization.localizedTexts);
-  console.log(localization.localizedTexts.resume);
+  // console.log(localization.localizedTexts.resume);
 
   return (
     <main className="main-page">
