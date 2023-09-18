@@ -3,19 +3,28 @@ import { useLocalization } from "./helpers/useLocalization";
 import { MainPage } from "./pages/MainPage";
 
 import "./scss/app.scss";
-
-import _localizations from "./localization.json";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [localization, setLocalization] = useLocalization("", {
+  const [localizationFile, setLocalizationFile] = useState(null);
+  const [localization, setLocalization] = useLocalization(localizationFile, {
     cookieName: "pageLanguage",
-    localizationTexts: _localizations,
   });
 
-  return (
+  useEffect(() => {
+    fetch("./localization.json").then((data) =>
+      data.json().then((file) => {
+        setLocalizationFile(file);
+      })
+    );
+  }, []);
+
+  return localization !== null ? (
     <LocalizationContext.Provider value={{ localization, setLocalization }}>
       <MainPage />
     </LocalizationContext.Provider>
+  ) : (
+    <></>
   );
 }
 
