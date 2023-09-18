@@ -19,6 +19,8 @@ function App() {
     );
   }, []);
 
+  console.log(localization);
+
   return localization !== null ? (
     <LocalizationContext.Provider value={{ localization, setLocalization }}>
       <MainPage />

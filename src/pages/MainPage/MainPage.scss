@@ -2,7 +2,6 @@
 
 .main-page {
   display: flex;
-  position: relative;
   flex-direction: row-reverse;
   width: 100%;
 
@@ -12,6 +11,9 @@
   text-shadow: -4px 2px 9px rgba(34, 60, 80, 0.6);
 
   @media (min-width: $media-desktop-min-width) {
+    display: flex;
+    flex-direction: row-reverse;
+
     &__language-switch {
       display: none;
       position: relative;
@@ -19,7 +21,8 @@
   }
 
   @media (max-width: $media-mobile-max-width) {
-    flex-direction: column;
+    // flex-direction: column;
+    display: block;
     font-size: $font-size-mobile;
 
     .language-switch {
@@ -68,12 +71,13 @@
   &__wrapper {
     position: relative;
     border: 0;
-    min-height: 100vh;
-    max-height: 100vh;
     overflow: hidden;
-    transition: width 0.7s;
 
     @media (min-width: $media-desktop-min-width) {
+      min-height: 100vh;
+      max-height: 100vh;
+      transition: width 0.7s;
+
       .main-page__language-switch {
         display: flex;
         flex-direction: row-reverse;
@@ -82,7 +86,7 @@
 
     @media (max-width: $media-mobile-max-width) {
       width: 100% !important;
-      max-height: revert;
+      // max-height: revert;
       overflow-y: scroll;
     }
   }
@@ -100,7 +104,6 @@
 }
 
 .main-page_additional {
-  flex-grow: 1;
   background-color: $background-color-first;
   display: flex;
   flex-direction: column;
@@ -108,6 +111,8 @@
   margin: auto;
 
   @media (min-width: 1281px) {
+    flex-grow: 1;
+
     .main-page__content {
       width: 450px;
     }
