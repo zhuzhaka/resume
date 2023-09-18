@@ -105,7 +105,7 @@
 
 .main-page_additional {
   background-color: $background-color-first;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   margin: auto;
@@ -148,7 +148,6 @@
   }
 
   @media (max-width: 1280px) {
-    display: none;
     min-height: 25vh;
     overflow: hidden;
     padding: 40px 0;
@@ -177,7 +176,8 @@
 }
 
 .main-page_resume {
-  width: 60%;
+  width: 80%;
+  margin: 0 auto;
   background-color: $background-color-second;
 
   overflow: hidden;
