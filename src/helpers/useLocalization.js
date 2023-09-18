@@ -29,7 +29,9 @@ export const useLocalization = (
   };
 
   console.log(lastLanguage);
-  console.log(localizedTexts.resume.links.github.text);
+  console.log(
+    localizedTexts ? localizedTexts.resume.links.github.text : "null"
+  );
 
   return localizedTexts
     ? [
