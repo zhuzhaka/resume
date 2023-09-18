@@ -1,8 +1,9 @@
 import { useCookies } from "react-cookie";
 import { useState } from "react";
+import { AvailableLanguages } from "./consts";
 
 function getLocalizedText(lang, texts) {
-  return texts && texts.find((item) => item.language === lang);
+  return texts && texts.find((item) => item.language.includes(lang));
 }
 
 export const useLocalization = (
@@ -14,8 +15,9 @@ export const useLocalization = (
   const lastLanguage =
     options.language ||
     cookies[options.cookieName] ||
-    navigator.language ||
-    "en-US";
+    navigator.language.slice(0, 2);
+
+  console.log(navigator.language.slice(0, 2));
 
   const [currentlanguage, _setLanguage] = useState(lastLanguage);
   const localizedTexts = getLocalizedText(lastLanguage, localizationJsonUrl);

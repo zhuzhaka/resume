@@ -1,4 +1,4 @@
 export const AvailableLanguages = {
-  en: { code: "en-US", text: "ENG" },
-  ru: { code: "ru-RU", text: "RUS" }
+  en: { code: "en", text: "ENG" },
+  ru: { code: "ru", text: "RUS" },
 };
