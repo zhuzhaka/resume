@@ -7,9 +7,12 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [localizationFile, setLocalizationFile] = useState(null);
-  const [localization, setLocalization] = useLocalization(localizationFile, {
-    cookieName: "pageLanguage",
-  });
+  const [localization, setLocalizationLanguage] = useLocalization(
+    localizationFile,
+    {
+      localStorageName: "pageLanguage",
+    }
+  );
 
   useEffect(() => {
     fetch("./localization.json").then((data) =>
@@ -19,10 +22,10 @@ function App() {
     );
   }, []);
 
-  console.log(localization);
-
   return localization !== null ? (
-    <LocalizationContext.Provider value={{ localization, setLocalization }}>
+    <LocalizationContext.Provider
+      value={{ localization, setLocalizationLanguage }}
+    >
       <MainPage />
     </LocalizationContext.Provider>
   ) : (

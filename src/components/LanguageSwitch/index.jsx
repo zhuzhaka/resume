@@ -5,7 +5,8 @@ import { AvailableLanguages } from "../../helpers/consts";
 import "./LanguageSwitch.scss";
 
 export const LanguageSwitch = () => {
-  const { localization, setLocalization } = useContext(LocalizationContext);
+  const { localization, setLocalizationLanguage } =
+    useContext(LocalizationContext);
 
   const onButtonClickHandler = () => {
     const lang =
@@ -13,7 +14,7 @@ export const LanguageSwitch = () => {
         ? AvailableLanguages.en.code
         : AvailableLanguages.ru.code;
 
-    setLocalization(lang);
+    setLocalizationLanguage(lang);
   };
 
   return (
