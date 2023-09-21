@@ -1,0 +1,50 @@
+@import "../_variables.scss";
+
+body.theme-light {
+  background-color: $color-background;
+  color: $color-font-text;
+  text-shadow: $text-shadow;
+
+  h1,
+  h3 {
+    color: $color-font-title;
+  }
+
+  a {
+    color: $color-links;
+  }
+
+  b {
+    color: $gray-600;
+  }
+
+  .theme-switch {
+    background-color: $white;
+    border: solid $gray-300 1px;
+
+    svg {
+      fill: $pink-800;
+      stroke: $gray-900;
+    }
+
+    .dropdown-list {
+      &__items-wrapper {
+        left: -1px;
+        background-color: $white;
+        border: solid $gray-300 1px;
+      }
+
+      &__item {
+        &_active {
+          background-color: $gray-600;
+        }
+      }
+    }
+  }
+
+  .page-root {
+    .main-page__content {
+      background-color: $color-background-content;
+    }
+  }
+}

@@ -1,28 +1,38 @@
+import { useEffect, useState } from "react";
+import { ThemeSwitch } from "./components/ThemeSwitch";
 import { LocalizationContext } from "./context";
+import { browserColorScheme } from "./helpers/consts";
+import { useAppTheme } from "./helpers/useAppTheme";
 import { useLocalization } from "./helpers/useLocalization";
 import { MainPage } from "./pages/MainPage";
 
 import "./scss/app.scss";
-import { useEffect, useState } from "react";
+
+const localizationJsonUrl = "./localization.json";
 
 function App() {
-  const [localizationFile, setLocalizationFile] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [localizationJson, setLocalizationJson] = useState(null);
   const [localization, setLocalizationLanguage] = useLocalization(
-    localizationFile,
+    localizationJson,
     {
       localStorageName: "pageLanguage",
     }
   );
 
   useEffect(() => {
-    fetch("./localization.json").then((data) =>
-      data.json().then((file) => {
-        setLocalizationFile(file);
-      })
-    );
-  }, []);
+    if (!localizationJson) {
+      fetch(localizationJsonUrl).then((data) =>
+        data.json().then((json) => setLocalizationJson(json))
+      );
+    }
 
-  return localization !== null ? (
+    if (localization && isLoading) {
+      setIsLoading(false);
+    }
+  }, [localization]);
+
+  return !isLoading ? (
     <LocalizationContext.Provider
       value={{ localization, setLocalizationLanguage }}
     >

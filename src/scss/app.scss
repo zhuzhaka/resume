@@ -1,4 +1,11 @@
 @import "./variables";
+@import "./themes/dark";
+@import "./themes/light";
+@import "./themes/ianagi";
+
+:root {
+  color-scheme: light dark ianagi;
+}
 
 * {
   margin: 0;
@@ -6,14 +13,6 @@
   list-style: none;
   outline: none;
   box-sizing: content-box;
-}
-
-body {
-  background-color: $primary;
-}
-
-a {
-  color: $a-color;
 }
 
 .page-root {

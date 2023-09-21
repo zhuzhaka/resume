@@ -1,0 +1,42 @@
+@import "../_variables-dark.scss";
+
+body.theme-dark {
+  background-color: $color-background !important;
+  color: $color-font-text;
+
+  h1,
+  h3 {
+    color: $color-font-title;
+  }
+
+  a {
+    color: $color-links;
+  }
+
+  .theme-switch {
+    background-color: #292929;
+
+    svg {
+      fill: $pink-500;
+      stroke: $gray-900;
+    }
+
+    .dropdown-list {
+      &__items-wrapper {
+        background-color: #292929;
+      }
+
+      &__item {
+        &_active {
+          background-color: $gray-600;
+        }
+      }
+    }
+  }
+
+  .page-root {
+    .main-page__content {
+      background-color: $color-background-content;
+    }
+  }
+}

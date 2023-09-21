@@ -1,3 +1,30 @@
+$white: #fff !default;
+$gray-100: #e1e3e6 !default;
+
+$gray-200: #e9ecef !default;
+$gray-300: #e5e5e5 !default;
+$gray-400: #ced4da !default;
+$gray-500: #f6f5f3 !default;
+$gray-700: #626d7a !default;
+$gray-600: #777777 !default;
+
+$gray-800: #222222 !default;
+$gray-900: #141414 !default;
+$black: #000 !default;
+$black-900: #222;
+$pink-500: #d4b2d5;
+$pink-800: #f09ac2;
+
+$color-background: rgb(237 238 240);
+$color-background-content: $white;
+$color-font-title: $gray-800;
+$color-font-text: $gray-800;
+$color-links: #6a9fdb;
+
+$text-shadow: none !default;
+
+//////////
+
 $background-color-first: #d4b2d5;
 $background-color-second: #46519d;
 $border-color: #f09ac2;

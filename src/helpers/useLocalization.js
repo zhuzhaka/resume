@@ -1,7 +1,19 @@
 import { useState } from "react";
 
-function getLocalizedText(lang, texts) {
-  return texts && texts.find((item) => item.language.includes(lang));
+function getLocalizedText(text, lang) {
+  return text && text.length > 0
+    ? text.find((item) => item.language.includes(lang))
+    : null;
+}
+
+function getAvailableLanguages(text) {
+  return text && text.length > 0 ? text.map((item) => item.language) : [];
+}
+
+function setLocalStorage(itemName, item) {
+  if (itemName) {
+    localStorage.setItem(itemName, item);
+  }
 }
 
 export const useLocalization = (
@@ -14,23 +26,22 @@ export const useLocalization = (
     navigator.language.slice(0, 2);
 
   const [_language, _setLanguage] = useState(lastLanguage);
-  const localizedTexts = getLocalizedText(lastLanguage, localizationJson);
 
-  const setLocalStorage = (language) => {
-    if (options.localStorageName) {
-      localStorage.setItem(options.localStorageName, language);
-    }
-  };
+  // console.log(localizationJson)
+
+  const availableLanguages = getAvailableLanguages(localizationJson);
+  const localizedTexts = getLocalizedText(localizationJson, lastLanguage);
 
   const setLocalizationLanguage = (language) => {
     _setLanguage(language);
-    setLocalStorage(language);
+    setLocalStorage(options.localStorageName, language);
   };
 
   return localizedTexts
     ? [
         {
           language: _language,
+          availableLanguages,
           localizedTexts,
         },
         setLocalizationLanguage,

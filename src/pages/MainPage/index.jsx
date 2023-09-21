@@ -7,6 +7,7 @@ import { ResumeBlock } from "../../components/ResumeBlock";
 import { LanguageSwitch } from "../../components/LanguageSwitch";
 
 import "./MainPage.scss";
+import { ThemeSwitch } from "../../components/ThemeSwitch";
 
 export const MainPage = () => {
   const { localization } = useContext(LocalizationContext);
@@ -19,6 +20,7 @@ export const MainPage = () => {
       <div className="main-page__wrapper main-page_resume slide-left">
         <div className="main-page__content">
           <div className="main-page__language-switch">
+            <ThemeSwitch />
             <LanguageSwitch />
           </div>
           <ResumeBlock resumeData={localization.localizedTexts.resume} />
