@@ -7,7 +7,7 @@ function getLocalizedText(text, lang) {
 }
 
 function getAvailableLanguages(text) {
-  return text && text.length > 0 ? text.map((item) => item.language) : [];
+  return text && text.length > 0 ? text.map((item) => item.language.slice(0, 2)) : [];
 }
 
 function setLocalStorage(itemName, item) {
@@ -24,17 +24,17 @@ export const useLocalization = (
     options.language ||
     localStorage.getItem(options.localStorageName) ||
     navigator.language.slice(0, 2);
-
+    
   const [_language, _setLanguage] = useState(lastLanguage);
-
-  // console.log(localizationJson)
-
+  
   const availableLanguages = getAvailableLanguages(localizationJson);
   const localizedTexts = getLocalizedText(localizationJson, lastLanguage);
 
   const setLocalizationLanguage = (language) => {
-    _setLanguage(language);
-    setLocalStorage(options.localStorageName, language);
+    if (availableLanguages.includes(language)) {
+      _setLanguage(language);
+      setLocalStorage(options.localStorageName, language);
+    }
   };
 
   return localizedTexts
