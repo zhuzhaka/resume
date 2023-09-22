@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { useAppTheme } from "../../helpers/useAppTheme";
 import { DropList } from "../DropList";
 import {
@@ -7,6 +8,7 @@ import {
 } from "./themeSvgIcons";
 
 import "./ThemeSwitch.scss";
+import { AppContext } from "../../context";
 
 const items = [
   {
@@ -27,8 +29,8 @@ const items = [
 ];
 
 export const ThemeSwitcher = () => {
-  const [theme, setTheme] = useAppTheme();
-
+  const { theme, setTheme } = useContext(AppContext);
+  
   const onItemClickHandle = (e) => {
     setTheme(e.currentTarget.getAttribute("data-theme"));
   };

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { LocalizationContext } from "./context";
+import { AppContext, LocalizationContext } from "./context";
 import { useLocalization } from "./helpers/useLocalization";
 import { MainPage } from "./pages/MainPage";
 
 import "./scss/app.scss";
 import { Header } from "./components/Header";
+import { useAppTheme } from "./helpers/useAppTheme";
 
 const localizationJsonUrl = "./localization.json";
 
@@ -17,6 +18,7 @@ function App() {
       localStorageName: "pageLanguage",
     }
   );
+  const [theme, setTheme] = useAppTheme();
 
   useEffect(() => {
     if (!localizationJson) {
@@ -31,12 +33,14 @@ function App() {
   }, [localization]);
 
   return !isLoading ? (
-    <LocalizationContext.Provider
-      value={{ localization, setLocalizationLanguage }}
-    >
-      <Header />
-      <MainPage />
-    </LocalizationContext.Provider>
+    <AppContext.Provider value={{ theme, setTheme }} >
+      <LocalizationContext.Provider
+        value={{ localization, setLocalizationLanguage }}
+      >
+        <Header />
+        <MainPage />
+      </LocalizationContext.Provider>
+    </AppContext.Provider>
   ) : (
     <></>
   );
