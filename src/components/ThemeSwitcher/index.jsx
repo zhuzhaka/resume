@@ -19,11 +19,11 @@ const items = [
     icon: DarkThemeIcon,
     dataAttributes: { "data-theme": "dark" },
   },
-  {
-    title: "ianagi",
-    icon: IanagiThemeIcon,
-    dataAttributes: { "data-theme": "ianagi" },
-  },
+  // {
+  //   title: "ianagi",
+  //   icon: IanagiThemeIcon,
+  //   dataAttributes: { "data-theme": "ianagi" },
+  // },
 ];
 
 export const ThemeSwitcher = () => {

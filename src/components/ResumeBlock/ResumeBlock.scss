@@ -3,10 +3,10 @@
 .resume-block {
   &__text {
     p {
-      font-family: PT Mono;
       font-size: 29px;
       letter-spacing: -1px;
       line-height: 45px;
+      padding: 10px 0;
       //text-shadow: -4px 2px 9px rgba(34, 60, 80, 0.6);
     }
 

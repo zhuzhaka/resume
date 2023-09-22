@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import { ThemeSwitch } from "./components/ThemeSwitch";
 import { LocalizationContext } from "./context";
-import { browserColorScheme } from "./helpers/consts";
-import { useAppTheme } from "./helpers/useAppTheme";
 import { useLocalization } from "./helpers/useLocalization";
 import { MainPage } from "./pages/MainPage";
 
 import "./scss/app.scss";
+import { Header } from "./components/Header";
 
 const localizationJsonUrl = "./localization.json";
 
@@ -36,6 +34,7 @@ function App() {
     <LocalizationContext.Provider
       value={{ localization, setLocalizationLanguage }}
     >
+      <Header />
       <MainPage />
     </LocalizationContext.Provider>
   ) : (

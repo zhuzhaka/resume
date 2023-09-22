@@ -4,24 +4,21 @@ import { LocalizationContext } from "../../context";
 import { Logo } from "../../components/Logo";
 import { InfoList } from "../../components/InfoList";
 import { ResumeBlock } from "../../components/ResumeBlock";
-import { LanguageSwitch } from "../../components/LanguageSwitch";
 
 import "./MainPage.scss";
-import { ThemeSwitch } from "../../components/ThemeSwitch";
+import { ThemeSwitcher } from "../../components/ThemeSwitcher";
+import { LanguageSwitcher } from "../../components/LanguageSwitcher";
 
 export const MainPage = () => {
   const { localization } = useContext(LocalizationContext);
 
   return (
     <main className="main-page">
-      <div className="main-page__language-switch">
-        <LanguageSwitch />
-      </div>
       <div className="main-page__wrapper main-page_resume slide-left">
         <div className="main-page__content">
-          <div className="main-page__language-switch">
-            <ThemeSwitch />
-            <LanguageSwitch />
+          <div className="main-page__switcher">
+            <LanguageSwitcher/>
+            <ThemeSwitcher />
           </div>
           <ResumeBlock resumeData={localization.localizedTexts.resume} />
         </div>
