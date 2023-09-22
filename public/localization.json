@@ -4,7 +4,7 @@
     "resume": {
       "title": "Evgeniy Alexandrov",
       "body": {
-        "greetings": "👋 Hello, kitties! It's me 👆",
+        "greetings": "👋 Hello, kitties!",
         "realme": "✊ I am the one who knocks ",
         "fakeme": "(hah, relax, i'm just a regular frontend-developer)",
         "rofl": "🤟 I HATE <b>JavaScript</b>, <b>ReactJS</b> and <b>UI design</b>. (but it smells like money, so... i'm in 😎)"
@@ -61,7 +61,7 @@
     "resume": {
       "title": "Евгений Александров",
       "body": {
-        "greetings": "👋 Здарова, котаны! Эт я 👆",
+        "greetings": "👋 Здарова, котаны!",
         "realme": "✊ Я тот, кто стучит в дверь! ",
         "fakeme": "(хаха, спокойствие, я всего-лишь очередной frontend-разработчик)",
         "rofl": "🤟 Терпеть не могу <b>JavaScript</b>, <b>ReactJS</b> и <b>UI design</b>. (но деньги не пахнут, так-что... Я в деле 😎)"
