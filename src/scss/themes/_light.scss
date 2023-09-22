@@ -20,30 +20,42 @@ body.theme-light {
 
   .theme-switch {
     background-color: $white;
-    border: solid $gray-300 1px;
 
     svg {
       fill: $pink-800;
       stroke: $gray-900;
+    }    
+  }
+
+  .dropdown-list {    
+    border-color: $gray-300;
+
+    &__items-wrapper {
+      background-color: $white;
+      border-color: $gray-300;
     }
 
-    .dropdown-list {
-      &__items-wrapper {
-        left: -1px;
-        background-color: $white;
-        border: solid $gray-300 1px;
+    &__item {
+      &_active {
+        background-color: $gray-600;
       }
+    }
 
-      &__item {
-        &_active {
-          background-color: $gray-600;
-        }
-      }
+    .dropdown-list__icon {
+      border-color: $gray-300;
+      svg {
+        stroke: $color-font-title;
+        fill: $color-font-title;
+      } 
     }
   }
 
-  .page-root {
-    .main-page__content {
+  .page-root {    
+    .header-mobile {      
+      border-color: $color-background;
+    }
+
+    .main-page__content, .header-mobile {
       background-color: $color-background-content;
     }
   }

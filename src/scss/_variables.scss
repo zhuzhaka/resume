@@ -1,27 +1,32 @@
 $white: #fff !default;
-$gray-100: #e1e3e6 !default;
 
+$gray-100: #e1e3e6 !default;
 $gray-200: #e9ecef !default;
 $gray-300: #e5e5e5 !default;
 $gray-400: #ced4da !default;
-$gray-500: #f6f5f3 !default;
+$gray-500: #fbfbfe !default;
+$gray-600: #6c757d !default;
 $gray-700: #626d7a !default;
-$gray-600: #777777 !default;
-
+$gray-750: #292929 !default;
 $gray-800: #222222 !default;
 $gray-900: #141414 !default;
+
 $black: #000 !default;
-$black-900: #222;
+
 $pink-500: #d4b2d5;
 $pink-800: #f09ac2;
 
-$color-background: rgb(237 238 240);
-$color-background-content: $white;
-$color-font-title: $gray-800;
-$color-font-text: $gray-800;
-$color-links: #6a9fdb;
+$blue-600: #6a9fdb;
+
+$color-background: rgb(237 238 240) !default;
+$color-background-content: $white !default;
+$color-font-title: $gray-800 !default;
+$color-font-text: $gray-800 !default;
+$color-links: $blue-600 !default;
 
 $text-shadow: none !default;
+
+$header-mobile-height: 88px;
 
 //////////
 
@@ -37,7 +42,7 @@ $disabled: #e4e3de !default;
 $font-color: #e4e3de !default;
 $fc-alternate: #f09ac2 !default;
 
-$font-family: "PT Mono";
+$font-family: PT Mono, PT serif, serif, Helvetica, system-ui !default;
 $font-family-default: "system-ui";
 $font-size-h1: 100px;
 $font-size-h3: 36px;

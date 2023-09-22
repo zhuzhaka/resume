@@ -3,6 +3,8 @@
 @import "./themes/light";
 @import "./themes/ianagi";
 
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
 :root {
   color-scheme: light dark ianagi;
 }
@@ -13,6 +15,20 @@
   list-style: none;
   outline: none;
   box-sizing: content-box;
+}
+
+body {
+  font-family: $font-family;
+  overflow: auto;
+
+  .header-mobile {
+    display: none;
+
+    @media(max-width: $media-mobile-max-width) {
+      display: flex;
+    }
+
+  }
 }
 
 .page-root {

@@ -1,42 +1,55 @@
 @import "../_variables-dark.scss";
 
 body.theme-dark {
-  background-color: $color-background !important;
-  color: $color-font-text;
+  background-color: $color-background-dark;
+  color: $color-font-text-dark;
 
   h1,
   h3 {
-    color: $color-font-title;
+    color: $color-font-title-dark;
   }
 
   a {
-    color: $color-links;
+    color: $color-links-dark;
   }
 
   .theme-switch {
-    background-color: #292929;
-
     svg {
       fill: $pink-500;
       stroke: $gray-900;
+    }   
+  }
+
+  .dropdown-list {
+    background-color: $gray-750;
+    border-color: $color-background-dark;
+
+    &__items-wrapper {
+      background-color: $gray-750;
+      border-color: $color-background-dark;
     }
 
-    .dropdown-list {
-      &__items-wrapper {
-        background-color: #292929;
+    &__item {
+      &_active {
+        background-color: $gray-600;
       }
+    }
 
-      &__item {
-        &_active {
-          background-color: $gray-600;
-        }
+    &__icon {
+      svg {
+        stroke: $color-font-text-dark;
+        fill: $color-font-text-dark;
       }
     }
   }
 
   .page-root {
-    .main-page__content {
-      background-color: $color-background-content;
+    .header-mobile {      
+      border-color: $color-background-dark;
+    }
+
+    .main-page__content, .header-mobile {
+      background-color: $color-background-content-dark;
     }
   }
 }
