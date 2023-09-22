@@ -1,59 +1,72 @@
+@import '../../scss/variables';
+
 .dropdown-list {
   position: relative;
+  border: solid $gray-300 1px;
+  border-radius: 24px;
+
   cursor: pointer;
 
   svg {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
+  }
+
+  &__header {
+    display: flex;
+    height: 32px;
   }
 
   &__item {
     display: flex;
     padding: 10px;
     border-radius: 24px;
-
-    svg {
-      padding-right: 10px;
-    }
+    justify-content: center;
   }
 
-  &__preview-item {
+  &__selected {
     display: flex;
-    align-items: center;
+    align-items: center; 
+    padding-right: 8px;   
+  }
 
+  &__selected-title {
+    flex-grow: 1;
+  }
+
+  &__icon {
+    padding-left: 8px;
+    border-left: 1px solid;
     svg {
-      padding-right: 10px;
-    }
-
-    span {
-      flex-grow: 1;
+      transition: transform .4s;
+      transform: rotate(180deg);
     }
   }
 
-  &__overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vw;
-    width: 100vw;
-    overflow: hidden;
-    z-index: 900;
-    cursor: auto;
+  &.dropdown-list_dropped {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    // border-bottom: 0;
 
-    &_dropped {
-      display: block;
+    .dropdown-list__icon {
+      svg {
+        transform: rotate(0deg);
+      }
     }
   }
 
   &__items-wrapper {
     display: none;
     position: absolute;
-    right: 0;
-    width: 100%;
+    top: 74px;
+    right: -1px;
+    width: 100%;    
 
-    padding-top: 20px;
+    // padding-top: 20px;
+    padding: 10px 0;
     border-radius: 0 0 24px 24px;
+    border: solid $gray-300 1px;
+    border-top: 0;
 
     &_dropped {
       display: block;
