@@ -10,7 +10,15 @@
   svg {
     width: 32px;
     height: 32px;
+    margin-right: 10px;
   }
+
+  &__no-title {
+    svg {
+      margin: 0
+    }
+  }
+
 
   &__header {
     display: flex;
@@ -22,6 +30,7 @@
     padding: 10px;
     border-radius: 24px;
     justify-content: center;
+    align-items: end;
   }
 
   &__selected {
