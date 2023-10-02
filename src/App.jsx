@@ -33,10 +33,9 @@ function App() {
   }, [localization]);
 
   return !isLoading ? (
-    <AppContext.Provider value={{ theme, setTheme }} >
+    <AppContext.Provider value={{ theme, setTheme }}>
       <LocalizationContext.Provider
-        value={{ localization, setLocalizationLanguage }}
-      >
+        value={{ localization, setLocalizationLanguage }}>
         <Header />
         <MainPage />
       </LocalizationContext.Provider>
